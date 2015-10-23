@@ -1,0 +1,60 @@
+﻿@model MovieShopUser.Models.ShoppingCartModel
+
+@{
+    ViewBag.Title = "Shopping Cart";
+}
+
+<h2>Shopping Cart</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Title")
+        </th>
+        <th>
+            @Html.DisplayName("Quantity")
+        </th>
+        <th>
+            @Html.DisplayName("UnitPrice")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+    @Html.DisplayFor(modelItem => item.Quantity)
+    
+                
+          <a href="@Url.Action("AmountPlus", "ShoppingCart", new { id = item.MovieId })" class="glyphicon glyphicon-plus" />
+
+           <a href="@Url.Action("AmountMinus", "ShoppingCart", new { id = item.MovieId })" class="glyphicon glyphicon-minus" />
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+        </tr>
+    }
+
+    <tr>
+        <td><b>Total:</b></td>
+        <td>@Model.NoOfItems</td>
+        <td>@Model.TotalPrice.ToString("F2")</td>
+    </tr>
+
+</table>
+
+<p>
+    @Html.ActionLink("Clear shopping cart", "Clear", "ShoppingCart")
+ 
+    @*@Html.ActionLink("Checkout", "Index" , "Checkout", new { @class = "btn btn-primary"})*@
+
+    <a href="@Url.Action("Index", "Checkout")" class="btn-success">Checkout</a>
+</p>
+
+

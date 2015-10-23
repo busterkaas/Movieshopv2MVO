@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MovieShopDAL.BE.Genre>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2 style="margin-top:1px">Genres</h2>
+<button class="btn btn-success" onclick="window.location.href = '@Url.Action("Create", "Genres")'">Create Genre</button>
+<br />
+<br />
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody style="background-color:white, cornflowerblue,aqua">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <div class="col-md-12" style="border: none">
+                        <button class="btn btn-warning" style="margin-right:5px" onclick="window.location.href = '/Genres/Edit/@item.GenreId'">Edit</button>
+                        <button class="btn btn-info" style="margin-right:5px" onclick="window.location.href = '/Genres/Details/@item.GenreId'">Details</button>
+                        <button class="btn btn-danger" style="margin-right:5px" onclick="window.location.href = '/Genres/Delete/@item.GenreId'">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

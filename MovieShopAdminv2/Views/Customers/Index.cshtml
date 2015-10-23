@@ -1,0 +1,74 @@
+﻿@model IEnumerable<MovieShopDAL.BE.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="margin-top:1px">Customers</h2>
+<button class="btn btn-success" onclick="window.location.href = '@Url.Action("Create", "Customers")'">Create Customer</button>
+<br />
+<br />
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StreetName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseNr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody style="background-color:white, cornflowerblue,aqua">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StreetName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HouseNr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZipCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <div class="col-md-12" style="border: none">
+                        <button class="btn btn-warning" style="margin-right:5px" onclick="window.location.href = '/Customers/Edit/@item.CustomerId'">Edit</button>
+                        <button class="btn btn-info" style="margin-right:5px" onclick="window.location.href = '/Customers/Details/@item.CustomerId'">Details</button>
+                        <button class="btn btn-danger" style="margin-right:5px" onclick="window.location.href = '/Customers/Delete/@item.CustomerId'">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

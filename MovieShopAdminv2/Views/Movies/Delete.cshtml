@@ -1,0 +1,72 @@
+﻿@model MovieShopDAL.BE.Movie
+
+@{
+    ViewBag.Title = "Delete Movie";
+}
+
+<h2>Delete Movie</h2>
+
+<h3>Are you sure you want to delete <strong> @Model.Title</strong>?</h3>
+<div>
+    <hr />
+    @*<dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Genre.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Genre.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Year)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Year)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ImageUrl)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TrailerUrl)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TrailerUrl)
+            </dd>
+
+        </dl>*@
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color col-md-offset-1 col-md-10">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-primary" })
+        </div>
+    }
+</div>

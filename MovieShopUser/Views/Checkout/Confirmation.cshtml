@@ -1,0 +1,122 @@
+﻿@model MovieShopUser.ViewModels.CustomerCart
+
+@{
+    ViewBag.Title = "Confirmation";
+}
+
+<h2>Confirmation</h2>
+<br />
+
+
+<div>
+    <h4>Movies Ordered:</h4>
+    @{
+        decimal i = 0;
+        <table class="table-condensed" style="width:400px;">
+            <thead style="border-bottom:solid">
+                <tr>
+                    <td>
+                        <strong>Title</strong>
+                       
+                    </td>
+                    <td>
+                        <strong> Quantity</strong>
+                    </td>
+                    <td>
+                        <strong>Price</strong>
+                    </td>
+                    <td></td>
+                </tr>
+            </thead>
+            @foreach (var item in Model.CartItems)
+            {
+                <tr style="border-bottom:groove">
+                    <td>
+                        @item.Title
+                    </td>
+                    <td>
+                        @item.Quantity
+                    </td>
+                    <td>
+                        @{decimal u = @item.UnitPrice * @item.Quantity;}
+                        @u
+                    </td>
+                   
+                    @{i = i + @item.UnitPrice * @item.Quantity;
+                    }
+                       
+                       
+                </tr>
+            }
+            
+              
+        </table>
+        <br />
+                        <p><strong>Price: @i DKK</strong> </p>
+    }
+</div>
+
+<br />
+
+<div >
+    <h4>Customer Details:</h4>
+
+
+    <table class="table-condensed">
+        <tr>
+            <td>
+                Firstname:
+            </td>
+            <td>
+                @Model.Customer.FirstName
+            </td>
+        <tr>
+            <td>
+                Lastname:
+            </td>
+            <td>
+                @Model.Customer.LastName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Streetname:
+            </td>
+            <td>
+                @Model.Customer.StreetName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                House nr:
+            </td>
+            <td>
+                @Model.Customer.HouseNr
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City:
+            </td>
+            <td>
+                @Model.Customer.City
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Zip code:
+            </td>
+            <td>
+                @Model.Customer.ZipCode
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+<br />
+
+<div>
+   <a href="@Url.Action("Complete", "Checkout")">Mojn</a>
+</div>

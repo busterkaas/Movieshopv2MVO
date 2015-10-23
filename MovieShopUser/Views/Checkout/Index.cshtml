@@ -1,0 +1,73 @@
+﻿@model MovieShopDAL.BE.Customer
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Customer information</h2>
+@*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+
+    <form id="one" method="post" action="/Checkout/ValidateFormer" style="float:left;" >
+        Already registered?
+        <br />
+        <input type="email" placeholder="Enter your email" name="cusEmail">
+        <input type="submit" class="btn-primary" value="Confirm">
+    </form>
+
+    <br /> &nbsp;&nbsp;&nbsp;&nbsp; Else, please register here: &nbsp;
+<br />
+    <form id="two" method="post" action="/Checkout/CustomerResult" style="float:right; margin-right:280px; ">
+      
+        
+        <div class="table-responsive">
+            <table class="table-condensed">
+                <tr>
+                    <td>Email:</td>
+                    <td>
+                        
+                        <input type="email" name="Email" required/>
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>First Name:</td>
+                    <td>
+                        <input type="text" name="FirstName" required /> <br />
+                    </td>
+
+                <tr>
+                    <td>Last Name: </td>
+                    <td>
+                        <input type="text" name="LastName" required /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Streetname:</td>
+                    <td>
+                        <input type="text" name="StreetName"required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>House number (and floor):</td>
+                    <td>
+                        <input type="text" name="HouseNr" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td>
+                        <input type="text" name="City" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Zip code:</td>
+                    <td>
+                        <input type="number" name="ZipCode" required />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <input type="submit" class="btn-primary" value="Register" style="float:right; margin:12px;">
+    </form>
+   
+

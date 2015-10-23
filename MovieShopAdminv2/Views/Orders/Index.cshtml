@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MovieShopDAL.BE.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2 style="margin-top:1px">Orders</h2>
+<button class="btn btn-success" onclick="window.location.href = '@Url.Action("Create", "Orders")'">Create Order</button>
+<br />
+<br />
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>
+                Customer
+            </th>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody style="background-color:white, cornflowerblue,aqua">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    <button class="btn btn-warning" style="margin-right:5px" onclick="window.location.href = '/Orders/Edit/@item.OrderId'">Edit</button>
+                    <button class="btn btn-info" style="margin-right:5px" onclick="window.location.href = '/Orders/Details/@item.OrderId'">Details</button>
+                    <button class="btn btn-danger" style="margin-right:5px" onclick="window.location.href = '/Orders/Delete/@item.OrderId'">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

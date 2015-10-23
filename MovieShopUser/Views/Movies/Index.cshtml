@@ -1,0 +1,95 @@
+﻿@model IEnumerable<MovieShopDAL.BE.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/MyContent/imagessheet.css" />
+
+    <style>
+        div.voffset2 {
+            margin-top: 30px;
+
+        }
+
+        h2{
+            color: #1963D1; font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif; font-size: 36px; font-weight: 400;  line-height: 44px; margin: 0 0 12px; text-align: center;
+        }
+
+        #MyCover {
+            height: 340px;
+            width: 255px;
+        }
+    </style>
+</head>
+
+<br />
+<br />
+
+<h2><i>Movies</i></h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.DropDownList("GenreList",
+        (SelectList)ViewBag.GenreList, "All",
+        new { onchange = "javascript:this.form.submit()" })
+    </p>
+}
+
+
+@*<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+       Genre
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        @foreach (var genre in (SelectList)ViewBag.GenreList)
+        {
+            <li><a href="@Url.Action("Index", "Movies", new { g = genre })">@genre</a></li>
+        }
+        @*<li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li><a href="#">Separated link</a></li>*@@*
+    </ul>
+</div>*@
+
+
+
+
+
+
+@foreach (var item in Model)
+{
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 voffset2">
+
+        @if (item.ImageUrl.Count() < 1)
+        { <div class="hovereffect" style="box-shadow:  9px 9px 5px 5px rgba(25,26,26,1); height: 340px;
+            width: 255px;">
+            <img class="img-responsive" id="MyCover" src="~/Content/Images/no.gif" alt="">
+            <div class="overlay">
+                <h2>@item.Title</h2>
+                <a class="info" href='@Url.Action("Details", "Movies", new { id = item.MovieId })'><strong>Details</strong></a>
+                @*@Html.ActionLink("Add to cart", "Add", "ShoppingCart", new { id = item.MovieId }, null)*@
+                <a class="info" href='@Url.Action("Add", "ShoppingCart", new { id = item.MovieId })' style="background-color:limegreen;"><strong>BUY</strong></a>
+                <h3>@item.Price DKK</h3>
+            </div>
+        </div>}
+        else
+        {
+            <div class="hovereffect" style="box-shadow:  9px 9px 5px 5px  rgba(25,26,26,1); height: 340px;
+            width: 255px;">
+                <img class="img-responsive" id="MyCover" src="@item.ImageUrl" alt="">
+                <div class="overlay">
+                    <h2>@item.Title</h2>
+                    <a class="info" href='@Url.Action("Details", "Movies", new { id = item.MovieId })'><strong>Details</strong></a>
+                    @*@Html.ActionLink("Add to cart", "Add", "ShoppingCart", new { id = item.MovieId }, null)*@
+                    <a class="info" href='@Url.Action("Add", "ShoppingCart", new { id = item.MovieId })' style="background-color:limegreen;"><strong>BUY</strong></a>
+                    <h3>@item.Price DKK</h3>
+                 </div>
+            </div>
+        }
+
+    </div>
+}

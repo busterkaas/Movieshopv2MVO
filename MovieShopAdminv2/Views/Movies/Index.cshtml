@@ -1,0 +1,126 @@
+﻿@model IEnumerable<MovieShopDAL.BE.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <style>
+        .smallPic {
+            height: 150px;
+            width: 100px;
+        }
+
+        .trailer {
+            height: 150px;
+            width: 310px;
+        }
+    </style>
+</head>
+
+<div>
+    <div style="float:left; width:50%; height:75px">
+        <h2 style="margin-top:1px">Movies</h2>
+        <button class="btn btn-success" onclick="window.location.href = '@Url.Action("Create", "Movies")'">Create Movie</button>
+    </div>
+    <div align="right" style="float:right; width:50%;">
+        <div align="left" class="panel panel-body panel-danger" style="background-color:Highlight; height:75px">
+            <div>
+                <strong>OrderBy</strong>
+                <div>
+                    @using (Html.BeginForm())
+                    {
+                        <p>
+                            Genre:
+                            @Html.DropDownList("GenreList", (SelectList)ViewBag.GenreList, "All", new { onchange = "javascript:this.form.submit()" })
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<br />
+<br />
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>
+                Cover
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrailerUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+            {
+
+            <tr>
+                <td >
+                    @if (item.ImageUrl.IsEmpty() == true)
+                    {
+                        <img src="/content/images/no.gif" class="smallPic" />
+                    }
+                    else
+                    {
+                        <img src="@item.ImageUrl" class="smallPic" />
+                    }
+
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @if (item.TrailerUrl.IsEmpty() == true)
+                    {
+                        <img src="/Content/images/not.png" class="trailer"/>
+                    }
+                    else
+                    {
+                        <iframe src="@item.TrailerUrl"
+                                class="trailer"
+                                frameborder="0"
+                                allowfullscreen="true"
+                                autostart="false"
+                                allowscriptaccess="always"></iframe>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre.Name)
+                </td>
+                <td>
+                    <div class="col-md-12" style="border: none">
+                        <button class="btn btn-warning" style="margin-right:5px" onclick="window.location.href = '/Movies/Edit/@item.MovieId'">Edit</button>
+                        <button class="btn btn-info" style="margin-right:5px" onclick="window.location.href = '/Movies/Details/@item.MovieId'">Details</button>
+                        <button class="btn btn-danger" style="margin-right:5px" onclick="window.location.href = '/Movies/Delete/@item.MovieId'">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

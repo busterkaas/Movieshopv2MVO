@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MovieShopDAL.BE.Genre>
+
+@{
+    ViewBag.Title = "Index";
+}
+<head><style>
+    #genreCol{
+    }
+nav.inline { width: 100%; display: table; table-layout: fixed; height: 100%; text-align: center; overflow: hidden; }
+nav.inline ul { margin: 0; padding: 0; display: table-row; height: 100%; position: relative; }
+nav.inline li { list-style: none; display: table-cell; height: 100%; padding:5px;}
+
+.options-bar { color:white; min-height:70px; line-height:70px;}
+.button {border-radius: 15px; padding: 0 20px; border: 2px solid #0081DE;cursor: pointer; background: #222; text-transform: uppercase ; color: #555; }
+.button:hover {background-color:dimgrey ;border-color: #005796;color: #fff}
+
+
+
+
+    </style></head>
+
+<h2>Genres</h2>
+<br />
+
+
+
+    <div class="options-bar">
+        <nav class="inline">
+            <ul>
+@foreach (var item in Model)
+{
+
+           
+                <li><div id="genreCol" class="button" href="#"><strong>@item.Name</strong></div></li>
+                
+}
+                </ul>
+        </nav>
+    </div>
+
