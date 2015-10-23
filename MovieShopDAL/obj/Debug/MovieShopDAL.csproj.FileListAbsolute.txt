@@ -1,0 +1,10 @@
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopDAL\bin\Debug\MovieShopDAL.dll.config
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopDAL\bin\Debug\MovieShopDAL.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopDAL\bin\Debug\MovieShopDAL.pdb
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopDAL\bin\Debug\EntityFramework.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopDAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopDAL\bin\Debug\EntityFramework.xml
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopDAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopDAL\obj\Debug\MovieShopDAL.csprojResolveAssemblyReference.cache
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopDAL\obj\Debug\MovieShopDAL.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopDAL\obj\Debug\MovieShopDAL.pdb

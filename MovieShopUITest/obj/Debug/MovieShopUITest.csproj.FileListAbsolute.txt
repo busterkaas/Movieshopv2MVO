@@ -1,0 +1,17 @@
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\MovieShopUITest.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\MovieShopUITest.pdb
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\MovieShopDAL.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\nunit.core.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\nunit.core.interfaces.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\nunit.framework.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\nunit.util.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\NUnit.VisualStudio.TestAdapter.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\EntityFramework.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\MovieShopDAL.pdb
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\nunit.framework.xml
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\EntityFramework.xml
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\obj\Debug\MovieShopUITest.csprojResolveAssemblyReference.cache
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\obj\Debug\MovieShopUITest.dll
+D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\obj\Debug\MovieShopUITest.pdb
