@@ -118,5 +118,7 @@
 <br />
 
 <div>
-   <a href="@Url.Action("Complete", "Checkout")">Confirm</a>
+   <button class="btn btn-primary" onclick="window.location.href='/ShoppingCart/Index'">Cancel</button> |
+   @Html.ActionLink("Complete", "Complete", null, new { @class = "btn btn-success" })
+
 </div>

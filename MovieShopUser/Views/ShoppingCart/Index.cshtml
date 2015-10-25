@@ -27,12 +27,12 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-    @Html.DisplayFor(modelItem => item.Quantity)
-    
-                
-          <a href="@Url.Action("AmountPlus", "ShoppingCart", new { id = item.MovieId })" class="glyphicon glyphicon-plus" />
+                @Html.DisplayFor(modelItem => item.Quantity)
 
-           <a href="@Url.Action("AmountMinus", "ShoppingCart", new { id = item.MovieId })" class="glyphicon glyphicon-minus" />
+
+                <a href="@Url.Action("AmountPlus", "ShoppingCart", new { id = item.MovieId })" class="glyphicon glyphicon-plus" />
+
+                <a href="@Url.Action("AmountMinus", "ShoppingCart", new { id = item.MovieId })" class="glyphicon glyphicon-minus" />
 
             </td>
             <td>
@@ -50,11 +50,15 @@
 </table>
 
 <p>
-    @Html.ActionLink("Clear shopping cart", "Clear", "ShoppingCart")
- 
+    @*@Html.ActionLink("Clear shopping cart", "Clear", "ShoppingCart")*@
+
     @*@Html.ActionLink("Checkout", "Index" , "Checkout", new { @class = "btn btn-primary"})*@
 
-    <a href="@Url.Action("Index", "Checkout")" class="btn-success">Checkout</a>
+    @*<a href="@Url.Action("Index", "Checkout")" class="btn-success">Checkout</a>*@
+
+    @Html.ActionLink("Clear shopping cart", "Clear", null, new { @class = "btn btn-primary" }) |
+    <button class="btn btn-success" onclick="window.location.href='/Checkout/Index'">Checkout</button>
+
 </p>
 
 

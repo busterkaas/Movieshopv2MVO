@@ -12,6 +12,7 @@ namespace MovieShopAdminv2
     {
         protected void Application_Start()
         {
+            MovieShopDAL.DBInitializer.Initialize();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

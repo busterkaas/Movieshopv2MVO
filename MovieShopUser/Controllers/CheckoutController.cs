@@ -123,6 +123,7 @@ namespace MovieShopUser.Controllers
                 df.OrderlineRepository.Add(ol);
                 
             }
+            Session["cart"] = null;
             return View();
         }
     }

@@ -51,7 +51,7 @@ namespace MovieShopUser.Controllers
         public ActionResult Clear()
         {
             Session["cart"] = null;
-            return RedirectToAction("Index", "Movies");
+            return RedirectToAction("Index", "ShoppingCart");
         }
 
         // Child action: returns the number of items in the shopping cart
