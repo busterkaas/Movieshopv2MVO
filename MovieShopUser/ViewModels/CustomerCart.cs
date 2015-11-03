@@ -12,20 +12,13 @@ namespace MovieShopUser.ViewModels
 
         public Customer Customer { get; set; }
 
-        public Customer getCustomer()
-        {
-            return Customer;
-        }
         public void setCustomer(Customer cus)
         {
             Customer = cus;
         }
 
         public List<ShoppingCartItem> CartItems { get; set; }
-        public List<ShoppingCartItem> getCartList()
-        {
-            return CartItems;
-        }
+  
         public void setCartItems(List<ShoppingCartItem> list)
         {
             CartItems = list;

@@ -1,5 +1,6 @@
 ﻿using MovieShopDAL;
 using MovieShopDAL.BE;
+using MovieShopUser.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,11 @@ namespace MovieShopUser.Controllers
         {
             //var movies = db.Movies.Include(m => m.Genre);
             var movies = DF.MovieRepository.GetAll();
+            List <Genre> genres = DF.GenreRepository.GetAll().ToList();
+            
+            MovieGenre mg = new MovieGenre();
+            mg.Genres = genres;
+
 
             //var genres = DF.GenreRepository.GetAll();
 
@@ -28,11 +34,13 @@ namespace MovieShopUser.Controllers
 
             if (string.IsNullOrEmpty(GenreList))
             {
-                return View(movies.ToList());
+                mg.Movies = movies.ToList();
+                return View(mg);
             }
             else
             {
-                return View(movies.Where(m => m.Genre.Name == GenreList));
+                mg.Movies = movies.Where(m => m.Genre.Name == GenreList).ToList();
+                return View(mg);
             }
 
             //return View(movies.ToList());

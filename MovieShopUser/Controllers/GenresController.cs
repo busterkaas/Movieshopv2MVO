@@ -21,6 +21,8 @@ namespace MovieShopUser.Controllers
             return View(DF.GenreRepository.GetAll().ToList());
         }
 
+       
+
     }
 
 }

@@ -65,7 +65,6 @@
     <Compile Include="Repositories\MovieRepository.cs" />
     <Compile Include="Repositories\OrderlineRepository.cs" />
     <Compile Include="Repositories\OrderRepository.cs" />
-    <Compile Include="ViewModels\MovieGenreViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
