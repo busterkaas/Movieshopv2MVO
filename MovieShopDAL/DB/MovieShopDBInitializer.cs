@@ -22,6 +22,12 @@ namespace MovieShopDAL
             Genre myGenre3 = new Genre { Name = "Comedy" };
             Genre myGenre4 = new Genre { Name = "Horror" };
             Genre myGenre5 = new Genre { Name = "Adventure" };
+            Genre myGenre6 = new Genre { Name = "Documentary" };
+            Genre myGenre7 = new Genre { Name = "Thriller" };
+            Genre myGenre8 = new Genre { Name = "Musical" };
+            Genre myGenre9 = new Genre { Name = "Sport" };
+            Genre myGenre10 = new Genre { Name = "History" };
+
             //Opret Movie
 
             List<Movie> movies = new List<Movie> {
@@ -37,6 +43,12 @@ namespace MovieShopDAL
         };
             context.Genres.Add(myGenre3);
             context.Genres.Add(myGenre5);
+            context.Genres.Add(myGenre6);
+            context.Genres.Add(myGenre7);
+            context.Genres.Add(myGenre8);
+            context.Genres.Add(myGenre9);
+            context.Genres.Add(myGenre10);
+
             context.Movies.AddRange(movies);
             
 

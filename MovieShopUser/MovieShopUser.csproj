@@ -142,6 +142,7 @@
     <Compile Include="Models\ShoppingCartModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CustomerCart.cs" />
+    <Compile Include="ViewModels\MovieGenre.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
