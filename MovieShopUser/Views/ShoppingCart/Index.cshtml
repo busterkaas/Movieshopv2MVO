@@ -50,19 +50,10 @@
 </table>
 
 <p>
-    @*@Html.ActionLink("Clear shopping cart", "Clear", "ShoppingCart")*@
 
-    @*@Html.ActionLink("Checkout", "Index" , "Checkout", new { @class = "btn btn-primary"})*@
-
-<<<<<<< HEAD
-    @*<a href="@Url.Action("Index", "Checkout")" class="btn-success">Checkout</a>*@
 
     @Html.ActionLink("Clear shopping cart", "Clear", null, new { @class = "btn btn-primary" }) |
     <button class="btn btn-success" onclick="window.location.href='/Checkout/Index'">Checkout</button>
-
-=======
-    <a href="@Url.Action("Index", "Checkout")" class="btn-sm btn-info" style="float:right; margin-right:88px;">Checkout</a>
->>>>>>> 7d0ea343c444558850ccf63e05e4136f96e477a1
 </p>
 
 
