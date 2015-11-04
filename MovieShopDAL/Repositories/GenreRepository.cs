@@ -16,11 +16,8 @@ namespace MovieShopDAL.Repositories
 
         public void Add(Genre entity)
         {
-            using (var db = new MovieShopDBContext())
-            {
                 db.Genres.Add(entity);
                 db.SaveChanges();
-            }
         }
 
         //public void Dispose()

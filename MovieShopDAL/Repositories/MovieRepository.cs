@@ -16,11 +16,8 @@ namespace MovieShopDAL.Repositories
 
         public void Add(Movie entity)
         {
-            using (var db = new MovieShopDBContext())
-            {
                 db.Movies.Add(entity);
                 db.SaveChanges();
-            }
         }
 
         //public void Dispose()
@@ -30,10 +27,8 @@ namespace MovieShopDAL.Repositories
 
         public void Edit(Movie entity)
         {
-            using (var db = new MovieShopDBContext()) { 
             db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-        }
         }
 
         public Movie Get(int id)
