@@ -15,3 +15,20 @@ D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\bin\Debug\
 D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\obj\Debug\MovieShopUITest.csprojResolveAssemblyReference.cache
 D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\obj\Debug\MovieShopUITest.dll
 D:\Users\Buster\Documents\VS2015 enterprise\MovieShop\MovieShopUITest\obj\Debug\MovieShopUITest.pdb
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\MovieShopUITest.dll
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\MovieShopUITest.pdb
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\MovieShopDAL.dll
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\nunit.core.dll
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\nunit.core.interfaces.dll
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\nunit.framework.dll
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\nunit.util.dll
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\NUnit.VisualStudio.TestAdapter.dll
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\EntityFramework.dll
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\MovieShopDAL.pdb
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\nunit.framework.xml
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\EntityFramework.xml
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\obj\Debug\MovieShopUITest.csprojResolveAssemblyReference.cache
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\obj\Debug\MovieShopUITest.dll
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopUITest\obj\Debug\MovieShopUITest.pdb
