@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace DtoModel
 {
-    public class Order
+    class Order
     {
         public int OrderId { get; set; }
         public DateTime Date { get; set; }
         public int CustomerId { get; set; }
-      
+        public virtual Customer Customer { get; set; }
+
+        public virtual List<Order> Orderlines { get; set; }
 
     }
 }
