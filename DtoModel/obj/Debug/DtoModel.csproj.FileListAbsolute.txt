@@ -1,0 +1,5 @@
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\bin\Debug\DtoModel.dll
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\bin\Debug\DtoModel.pdb
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\obj\Debug\DtoModel.csprojResolveAssemblyReference.cache
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\obj\Debug\DtoModel.dll
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\obj\Debug\DtoModel.pdb

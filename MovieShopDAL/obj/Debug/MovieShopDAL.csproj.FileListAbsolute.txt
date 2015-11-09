@@ -18,3 +18,13 @@ C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopDAL\bin\Debug\EntityFramework.S
 C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopDAL\obj\Debug\MovieShopDAL.csprojResolveAssemblyReference.cache
 C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopDAL\obj\Debug\MovieShopDAL.dll
 C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShopDAL\obj\Debug\MovieShopDAL.pdb
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShopDAL\bin\Debug\MovieShopDAL.dll.config
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShopDAL\bin\Debug\MovieShopDAL.dll
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShopDAL\bin\Debug\MovieShopDAL.pdb
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShopDAL\bin\Debug\EntityFramework.dll
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShopDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShopDAL\bin\Debug\EntityFramework.xml
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShopDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShopDAL\obj\Debug\MovieShopDAL.csprojResolveAssemblyReference.cache
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShopDAL\obj\Debug\MovieShopDAL.dll
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShopDAL\obj\Debug\MovieShopDAL.pdb
