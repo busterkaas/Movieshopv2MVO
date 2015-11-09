@@ -13,7 +13,11 @@ namespace DtoModel
         public int Amount {get; set; }
         public int MovieId { get; set; }
         public int OrderId { get; set; }
-        public virtual MovieDTO Movie { get; set; }
-        public virtual OrderDTO Order { get; set; }
+        public  MovieDTO Movie { get; set; }
+        public  OrderDTO Order { get; set; }
     }
+
+
+
+
 }
