@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converter\AbstractDTOConverter.cs" />
+    <Compile Include="Converter\CustomerConverter.cs" />
     <Compile Include="Converter\OrderConverter.cs" />
     <Compile Include="CustomerDTO.cs" />
     <Compile Include="GenreDTO.cs" />
