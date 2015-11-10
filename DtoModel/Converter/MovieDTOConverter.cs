@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DtoModel.Converter
 {
-    class MovieDTOConverter : AbstractDtoConverter<Movie, MovieDTO>
+    public class MovieDTOConverter : AbstractDtoConverter<Movie, MovieDTO>
     {
         public override MovieDTO Convert(Movie movie)
         {
