@@ -3,11 +3,11 @@ using MovieShopDTO.ModelDTO;
 
 namespace MovieShopDTO.Converter
 {
-    public class MovieDTOConverter : AbstractDtoConverter<Movie, MovieDTO>
+    public class MovieDtoConverter : AbstractDtoConverter<Movie, MovieDto>
     {
-        public override MovieDTO Convert(Movie movie)
+        public override MovieDto Convert(Movie movie)
         {
-            var dto = new MovieDTO()
+            var dto = new MovieDto()
             {
                 MovieId = movie.MovieId,
                 GenreId = movie.GenreId,

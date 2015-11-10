@@ -44,7 +44,6 @@ namespace MovieShopDAL.Repositories
         {
             //return db.Movies.Include(a => a.Genre).Include(g => g.Order).Tolist();
             //return db.Movies.Include(a => a.Genre);
-
             return db.Movies.ToList();
         }
 

@@ -13,15 +13,14 @@ namespace MovieShop_Rest.Controllers
     public class MovieController : ApiController
     {
         DALFacade df = new DALFacade();
-        public IEnumerable<MovieDTO> getMovies()
+        public IEnumerable<MovieDto> GetMovies()
         {
             var movies = df.MovieRepository.GetAll();
-            return new MovieDTOConverter().Convert(movies);
+            return new MovieDtoConverter().Convert(movies);
         }
 
-        public MovieDTO PostMovie(MovieDTO dto)
+        public MovieDto PostMovie(MovieDto dto)
         {
-
             return dto;
         }
     }

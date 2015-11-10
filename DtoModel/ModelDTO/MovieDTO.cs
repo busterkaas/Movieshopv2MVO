@@ -2,7 +2,7 @@
 
 namespace MovieShopDTO.ModelDTO
 {
-    public class MovieDTO
+    public class MovieDto
     {
         public int MovieId { get; set; }
         public int GenreId { get; set; }
