@@ -1,12 +1,8 @@
-﻿using MovieShopDAL.BE;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using MovieShopDAL.BE;
+using MovieShopDTO.ModelDTO;
 
-namespace DtoModel.Converter
+namespace MovieShopDTO.Converter
 {
     class OrderConverter : AbstractDtoConverter<Order, OrderDTO>
     {

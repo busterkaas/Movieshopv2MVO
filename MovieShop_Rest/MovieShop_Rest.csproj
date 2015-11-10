@@ -217,9 +217,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DtoModel\DtoModel.csproj">
+    <ProjectReference Include="..\DtoModel\MovieShopDTO.csproj">
       <Project>{2a54f8d0-ea83-4074-bbf4-4cde88c3331e}</Project>
-      <Name>DtoModel</Name>
+      <Name>MovieShopDTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\MovieShopDAL\MovieShopDAL.csproj">
       <Project>{33b60160-4683-4d3e-85d2-4cbd93317c7a}</Project>

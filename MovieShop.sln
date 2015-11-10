@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShopUser", "MovieShopU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShopAdminv2", "MovieShopAdminv2\MovieShopAdminv2.csproj", "{4F5107D6-A1DD-4AA9-B29E-6BC1A8FE2F97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtoModel", "DtoModel\DtoModel.csproj", "{2A54F8D0-EA83-4074-BBF4-4CDE88C3331E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShopDTO", "DtoModel\MovieShopDTO.csproj", "{2A54F8D0-EA83-4074-BBF4-4CDE88C3331E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShop_Rest", "MovieShop_Rest\MovieShop_Rest.csproj", "{3BF2BE9A-FD95-4684-AE8B-D0E946B646B6}"
 EndProject

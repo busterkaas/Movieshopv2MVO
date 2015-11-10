@@ -4,9 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using DtoModel;
-using DtoModel.Converter;
 using MovieShopDAL;
+using MovieShopDTO.Converter;
+using MovieShopDTO.ModelDTO;
 
 namespace MovieShop_Rest.Controllers
 {

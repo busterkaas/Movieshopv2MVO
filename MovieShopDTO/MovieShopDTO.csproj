@@ -7,8 +7,8 @@
     <ProjectGuid>{2A54F8D0-EA83-4074-BBF4-4CDE88C3331E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DtoModel</RootNamespace>
-    <AssemblyName>DtoModel</AssemblyName>
+    <RootNamespace>MovieShopDTO</RootNamespace>
+    <AssemblyName>MovieShopDTO</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -45,11 +45,11 @@
     <Compile Include="Converter\CustomerConverter.cs" />
     <Compile Include="Converter\MovieDTOConverter.cs" />
     <Compile Include="Converter\OrderConverter.cs" />
-    <Compile Include="CustomerDTO.cs" />
-    <Compile Include="GenreDTO.cs" />
-    <Compile Include="MovieDTO.cs" />
-    <Compile Include="OrderDTO.cs" />
-    <Compile Include="OrderlineDTO.cs" />
+    <Compile Include="ModelDTO\CustomerDTO.cs" />
+    <Compile Include="ModelDTO\GenreDTO.cs" />
+    <Compile Include="ModelDTO\MovieDTO.cs" />
+    <Compile Include="ModelDTO\OrderDTO.cs" />
+    <Compile Include="ModelDTO\OrderlineDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

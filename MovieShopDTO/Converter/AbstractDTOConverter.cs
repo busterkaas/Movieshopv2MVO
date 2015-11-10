@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace DtoModel.Converter
+namespace MovieShopDTO.Converter
 {
         public abstract class AbstractDtoConverter<T, TD>
         {
