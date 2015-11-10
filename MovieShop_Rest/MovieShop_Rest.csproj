@@ -221,6 +221,10 @@
       <Project>{2a54f8d0-ea83-4074-bbf4-4cde88c3331e}</Project>
       <Name>DtoModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MovieShopDAL\MovieShopDAL.csproj">
+      <Project>{33b60160-4683-4d3e-85d2-4cbd93317c7a}</Project>
+      <Name>MovieShopDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
