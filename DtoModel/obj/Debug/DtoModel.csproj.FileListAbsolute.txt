@@ -5,3 +5,5 @@ C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\o
 C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\obj\Debug\DtoModel.pdb
 C:\Users\Kennie\Documents\Movieshopv2MVO\DtoModel\obj\Debug\DtoModel.csprojResolveAssemblyReference.cache
 C:\Users\Kennie\Documents\Movieshopv2MVO\DtoModel\obj\Debug\DtoModel.dll
+C:\Users\RlxCw\Documents\Movieshopv2MVO\DtoModel\obj\Debug\DtoModel.csprojResolveAssemblyReference.cache
+C:\Users\RlxCw\Documents\Movieshopv2MVO\DtoModel\obj\Debug\DtoModel.dll
