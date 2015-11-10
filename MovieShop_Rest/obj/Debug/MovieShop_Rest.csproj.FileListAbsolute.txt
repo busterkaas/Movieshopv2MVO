@@ -46,3 +46,5 @@ C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShop_
 C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShop_Rest\obj\Debug\MovieShop_Rest.csprojResolveAssemblyReference.cache
 C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShop_Rest\obj\Debug\MovieShop_Rest.dll
 C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\MovieShop_Rest\obj\Debug\MovieShop_Rest.pdb
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShop_Rest\obj\Debug\MovieShop_Rest.csprojResolveAssemblyReference.cache
+C:\Users\RlxCw\Documents\Movieshopv2MVO\MovieShop_Rest\obj\Debug\MovieShop_Rest.dll
