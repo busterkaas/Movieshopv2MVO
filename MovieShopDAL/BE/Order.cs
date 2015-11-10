@@ -14,7 +14,7 @@ namespace MovieShopDAL.BE
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
 
-        public virtual List<Order> Orderlines { get; set; }
+        public virtual List<Orderline> Orderlines { get; set; }
        
         //public virtual Movie Movie { get; set; }
         //public List<Orderline> Orderlines { get; set; }
