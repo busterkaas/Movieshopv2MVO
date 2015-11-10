@@ -40,12 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\AbstractDTOConverter.cs" />
+    <Compile Include="Converter\OrderConverter.cs" />
     <Compile Include="CustomerDTO.cs" />
     <Compile Include="GenreDTO.cs" />
     <Compile Include="MovieDTO.cs" />
     <Compile Include="OrderDTO.cs" />
     <Compile Include="OrderlineDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieShopDAL\MovieShopDAL.csproj">
+      <Project>{33b60160-4683-4d3e-85d2-4cbd93317c7a}</Project>
+      <Name>MovieShopDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

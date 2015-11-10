@@ -13,6 +13,6 @@ namespace DtoModel
         public int CustomerId { get; set; }
         public CustomerDTO Customer { get; set; }
 
-        public ICollection<OrderDTO> Orderlines { get; set; }
+        public List<OrderDTO> Orderlines { get; set; }
     }
 }
