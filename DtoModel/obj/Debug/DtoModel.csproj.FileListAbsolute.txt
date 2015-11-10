@@ -3,3 +3,9 @@ C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\b
 C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\obj\Debug\DtoModel.csprojResolveAssemblyReference.cache
 C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\obj\Debug\DtoModel.dll
 C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\obj\Debug\DtoModel.pdb
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\bin\Debug\MovieShopDAL.dll
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\bin\Debug\EntityFramework.dll
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\bin\Debug\MovieShopDAL.pdb
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\bin\Debug\EntityFramework.xml
+C:\Users\Buster\Desktop\Datamatiker\3. semester\MVO moves - workplace\DtoModel\bin\Debug\EntityFramework.SqlServer.xml
