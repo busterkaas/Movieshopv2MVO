@@ -9,8 +9,6 @@ namespace MovieShopDTO.Converter
             {
                 return toConvert.Select(item => Convert(item)).ToList();
             }
-
             public abstract TD Convert(T item);
         }
-   
 }
