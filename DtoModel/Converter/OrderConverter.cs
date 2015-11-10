@@ -21,20 +21,21 @@ namespace DtoModel.Converter
             };
             if (item.Orderlines != null)
             {
-                orderDTO.Orderlines = new List<OrderDTO>();
-                foreach (var Orderline in item.Orderlines)
+                orderDTO.Orderlines = new List<OrderlineDTO>();
+                foreach (var orderline in item.Orderlines)
                 {
                     orderDTO.Orderlines.Add(new OrderlineDTO()
                     {
+                        Id = orderline.Id,
+                        Amount = orderline.Amount,
+                        OrderId = orderline.OrderId,
+                         MovieId = orderline.MovieId
+                    });
 
-                        Id = order.OrderId,
-                        Amount = order.Amount;
-
-                });
-
+                }
             }
+            return orderDTO;
         }
-            return OrderDTO;
-        }
+    }
 }
-}
+
