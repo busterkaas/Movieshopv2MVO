@@ -4,7 +4,7 @@ using MovieShopDTO.ModelDTO;
 
 namespace MovieShopDTO.Converter
 {
-    class OrderConverter : AbstractDtoConverter<Order, OrderDTO>
+    public class OrderConverter : AbstractDtoConverter<Order, OrderDTO>
     {
         public override OrderDTO Convert(Order item)
         {
@@ -13,7 +13,6 @@ namespace MovieShopDTO.Converter
                 OrderId = item.OrderId,
                 CustomerId = item.CustomerId,
                 Date = item.Date,
-
             };
             if (item.Orderlines != null)
             {
@@ -27,7 +26,6 @@ namespace MovieShopDTO.Converter
                         OrderId = orderline.OrderId,
                          MovieId = orderline.MovieId
                     });
-
                 }
             }
             return orderDTO;

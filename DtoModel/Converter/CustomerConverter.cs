@@ -3,7 +3,7 @@ using MovieShopDTO.ModelDTO;
 
 namespace MovieShopDTO.Converter
 {
-    class CustomerConverter : AbstractDtoConverter<Customer, CustomerDTO>
+    public class CustomerConverter : AbstractDtoConverter<Customer, CustomerDTO>
     {
         public override CustomerDTO Convert(Customer item)
         {
