@@ -26,84 +26,73 @@ namespace MovieShop_Rest.Controllers
             return new CustomerConverter().Convert(customers);
         }
 
-        //// GET: api/Customers/5
-        //[ResponseType(typeof(Customer))]
-        //public IHttpActionResult GetCustomer(int id)
-        //{
-        //    Customer customer = db.Customers.Find(id);
-        //    if (customer == null)
-        //    {
-        //        return NotFound();
-        //    }
+        // GET: api/Customers/5
+        [ResponseType(typeof(Customer))]
+        public IHttpActionResult GetCustomer(int id)
+        {
+            Customer customer = df.CustomerRepository.Get(id);
+            var customerDto = new CustomerConverter().Convert(customer);
+            if (customer == null)
+            {
+                return NotFound();
+            }
 
-        //    return Ok(customer);
-        //}
+            return Ok(customerDto);
+        }
 
-        //// PUT: api/Customers/5
-        //[ResponseType(typeof(void))]
-        //public IHttpActionResult PutCustomer(int id, Customer customer)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // PUT: api/Customers/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutCustomer(int id, CustomerDTO customer)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    if (id != customer.CustomerId)
-        //    {
-        //        return BadRequest();
-        //    }
+            if (id != customer.CustomerId)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                df.CustomerRepository.Edit(new CustomerConverter().Reverse(customer));
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return NotFound();
+            }
 
-        //    db.Entry(customer).State = EntityState.Modified;
+            return StatusCode(HttpStatusCode.NoContent);
+        }
 
-        //    try
-        //    {
-        //        db.SaveChanges();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!CustomerExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
+        // POST: api/Customers
+        [ResponseType(typeof(Customer))]
+        public IHttpActionResult PostCustomer(CustomerDTO customer)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            df.CustomerRepository.Add(new CustomerConverter().Reverse(customer));
 
-        //    return StatusCode(HttpStatusCode.NoContent);
-        //}
+            return CreatedAtRoute("DefaultApi", new { id = customer.CustomerId }, customer);
+        }
 
-        //// POST: api/Customers
-        //[ResponseType(typeof(Customer))]
-        //public IHttpActionResult PostCustomer(Customer customer)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // DELETE: api/Customers/5
+        [ResponseType(typeof(Customer))]
+        public IHttpActionResult DeleteCustomer(int id)
+        {
+            Customer customer = df.CustomerRepository.Get(id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
 
-        //    db.Customers.Add(customer);
-        //    db.SaveChanges();
+            df.CustomerRepository.Remove(customer.CustomerId);
 
-        //    return CreatedAtRoute("DefaultApi", new { id = customer.CustomerId }, customer);
-        //}
 
-        //// DELETE: api/Customers/5
-        //[ResponseType(typeof(Customer))]
-        //public IHttpActionResult DeleteCustomer(int id)
-        //{
-        //    Customer customer = db.Customers.Find(id);
-        //    if (customer == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    db.Customers.Remove(customer);
-        //    db.SaveChanges();
-
-        //    return Ok(customer);
-        //}
+            return Ok(customer);
+        }
 
         //protected override void Dispose(bool disposing)
         //{

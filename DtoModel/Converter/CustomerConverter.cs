@@ -24,7 +24,19 @@ namespace MovieShopDTO.Converter
 
         public override Customer Reverse(CustomerDTO item)
         {
-            throw new System.NotImplementedException();
+            var Customer = new Customer()
+            {
+                City = item.City,
+                CustomerId = item.CustomerId,
+                Email = item.Email,
+                FirstName = item.FirstName,
+                HouseNr = item.HouseNr,
+                LastName = item.LastName,
+                StreetName = item.StreetName,
+                ZipCode = item.ZipCode
+            };
+
+            return Customer;
         }
     }
 }
