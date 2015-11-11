@@ -29,5 +29,10 @@ namespace MovieShopDTO.Converter
 
             return dto;
         }
+
+        public override Movie Reverse(MovieDto item)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

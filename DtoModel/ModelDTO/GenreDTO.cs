@@ -6,6 +6,7 @@ namespace MovieShopDTO.ModelDTO
     {
         public int GenreId { get; set; }
         public string Name { get; set; }
-        public  ICollection<MovieDto> Movies { get; set; }
+
+        //public  ICollection<MovieDto> Movies { get; set; }
     }
 }

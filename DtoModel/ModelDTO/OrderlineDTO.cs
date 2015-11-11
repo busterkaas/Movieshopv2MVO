@@ -7,12 +7,6 @@
         public int Amount {get; set; }
         public int MovieId { get; set; }
         public int OrderId { get; set; }
-        public  MovieDto Movie { get; set; }
-        public  OrderDTO Order { get; set; }
 
     }
-
-
-
-
 }

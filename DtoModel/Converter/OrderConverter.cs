@@ -30,6 +30,11 @@ namespace MovieShopDTO.Converter
             }
             return orderDTO;
         }
+
+        public override Order Reverse(OrderDTO item)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
 

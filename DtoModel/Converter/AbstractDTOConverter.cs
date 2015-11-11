@@ -10,5 +10,7 @@ namespace MovieShopDTO.Converter
                 return toConvert.Select(item => Convert(item)).ToList();
             }
             public abstract TD Convert(T item);
+
+            public abstract T Reverse(TD item);
         }
 }

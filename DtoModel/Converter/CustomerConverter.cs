@@ -21,5 +21,10 @@ namespace MovieShopDTO.Converter
 
             return CustomerDto;
         }
+
+        public override Customer Reverse(CustomerDTO item)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
