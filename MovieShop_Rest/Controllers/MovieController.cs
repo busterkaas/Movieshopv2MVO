@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 using MovieShopDAL;
 using MovieShopDAL.BE;
 using MovieShopDTO.Converter;
@@ -16,12 +18,6 @@ namespace MovieShop_Rest.Controllers
         DALFacade df = new DALFacade();
 
         // GET /api/movie
-        // The method name starts with "Get", so by convention it maps to GET requests.
-        // Also, because the method has no parameters, it maps to a URI that does not 
-        // contain an "id" segment in the path. Instead of using "convention-based" 
-        // routing, you could define the route yourself with an attribute. This is
-        // called attribute routing.
-
         /// <summary>
         /// Returns all movies
         /// </summary>
@@ -32,25 +28,93 @@ namespace MovieShop_Rest.Controllers
             return new MovieDtoConverter().Convert(movies);
         }
 
-        /// <summery>
+        // GET /api/movie/id
+        /// <summary>
         /// Finds a Movie by Id
-        /// </summery>
+        /// </summary>
         /// <param name="id">Movie Id</param>
         /// <returns>Movie</returns>
-        //public Movie GetMovie(int id)
-        //{
-        //   Movie movie = df.MovieRepository.Get(id);
-        //   MovieDto movieDto = new MovieDtoConverter().Convert(movie);
-        //    if (movie == null)
-        //    {
-        //        throw new HttpResponseException(HttpStatusCode.NotFound);
-        //    }
-        //    return movieDto;
-        //}
-
-        public MovieDto PostMovie(MovieDto dto)
+        [ResponseType(typeof(MovieDto))]
+        public IHttpActionResult GetMovie(int id)
         {
-            return dto;
+            var movie = df.MovieRepository.Get(id);
+            MovieDto movieDto = new MovieDtoConverter().Convert(movie);
+            if (movie == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            return Ok(movieDto);
         }
+
+        //---------------------Mangler------------------------------------------------------------
+        //// POST/ api/movies
+        ///// <summary>
+        ///// Creates a new movie and adds it to the list of products
+        ///// </summary>
+        ///// <param name="movie">Product</param>
+        ///// <returns>Http response message containing the Movie, its URI, and a HTTP status code</returns>
+        //[ResponseType(typeof(Movie))]
+        //public IHttpActionResult PostMovie(Movie movie)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    df.MovieRepository.Add(movie);
+
+        //    return Ok(movie);
+        //}
+        //---------------------Mangler------------------------------------------------------------------
+
+        // PUT /api/Movies/id
+        /// <summary>
+        /// Replaces a movie with a new product
+        /// </summary>
+        /// <param name="id">Movie Id of the movie to replace</param>
+        /// <param name="movie">The new movie</param>
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutMovie(int id, MovieDto movie)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != movie.GenreId)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                df.MovieRepository.Edit(new MovieDtoConverter().Reverse(movie));
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return NotFound();
+            }
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        // DELETE /api/Genres/5
+        /// <summary>
+        /// Delete a movie
+        /// </summary>
+        /// <param name="id">Movie Id of the movie that should be deleted</param>
+        [ResponseType(typeof(MovieDto))]
+        public IHttpActionResult DeleteMovie(int id)
+        {
+            var movie = df.MovieRepository.Get(id);
+            MovieDto movieDto = new MovieDtoConverter().Convert(movie);
+            if (movie == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            df.MovieRepository.Remove(id);
+
+            return Ok(movieDto);
+        }
+
     }
 }

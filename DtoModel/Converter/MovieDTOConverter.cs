@@ -30,9 +30,29 @@ namespace MovieShopDTO.Converter
             return dto;
         }
 
-        public override Movie Reverse(MovieDto item)
+        public override Movie Reverse(MovieDto movieDto)
         {
-            throw new System.NotImplementedException();
+            var movie = new Movie()
+            {
+                MovieId = movieDto.MovieId,
+                GenreId = movieDto.GenreId,
+                Title = movieDto.Title,
+                Year = movieDto.Year,
+                Price = movieDto.Price,
+                ImageUrl = movieDto.ImageUrl,
+                TrailerUrl = movieDto.TrailerUrl
+            };
+
+            if (movieDto.Genre != null)
+            {
+                movie.Genre = new Genre()
+                {
+                    GenreId = movieDto.Genre.GenreId,
+                    Name = movieDto.Genre.Name
+                };
+            }
+
+            return movie;
         }
     }
 }
