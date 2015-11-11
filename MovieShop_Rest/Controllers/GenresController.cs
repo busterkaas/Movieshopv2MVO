@@ -37,7 +37,7 @@ namespace MovieShop_Rest.Controllers
                 return NotFound();
             }
 
-            return Ok(genre);
+            return Ok(genreDTO);
         }
 
         // PUT: api/Genres/5
@@ -65,36 +65,33 @@ namespace MovieShop_Rest.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        //// POST: api/Genres
-        //[ResponseType(typeof(Genre))]
-        //public IHttpActionResult PostGenre(Genre genre)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // POST: api/Genres
+        [ResponseType(typeof(GenreDTO))]
+        public IHttpActionResult PostGenre(GenreDTO genre)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            df.GenreRepository.Add(new GenreConverter().Reverse(genre));
+          
+            return CreatedAtRoute("DefaultApi", new { id = genre.GenreId }, genre);
+        }
 
-        //    db.Genres.Add(genre);
-        //    db.SaveChanges();
+        // DELETE: api/Genres/5
+        [ResponseType(typeof(GenreDTO))]
+        public IHttpActionResult DeleteGenre(int id)
+        {
+            Genre genre = df.GenreRepository.Get(id);
+            if (genre == null)
+            {
+                return NotFound();
+            }
 
-        //    return CreatedAtRoute("DefaultApi", new { id = genre.GenreId }, genre);
-        //}
+           df.GenreRepository.Remove(genre.GenreId);
 
-        //// DELETE: api/Genres/5
-        //[ResponseType(typeof(Genre))]
-        //public IHttpActionResult DeleteGenre(int id)
-        //{
-        //    Genre genre = db.Genres.Find(id);
-        //    if (genre == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    db.Genres.Remove(genre);
-        //    db.SaveChanges();
-
-        //    return Ok(genre);
-        //}
+            return Ok(genre);
+        }
 
         //protected override void Dispose(bool disposing)
         //{
