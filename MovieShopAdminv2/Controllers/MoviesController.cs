@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Linq;
 using System.Web.Mvc;
+using MovieShopAdminv2.Infrastructure;
 using MovieShopDAL;
 using MovieShopDAL.Repositories;
 using MovieShopDAL.BE;
@@ -9,15 +10,16 @@ namespace MovieShopAdminv2.Controllers
 {
     public class MoviesController : Controller
     {
-        private IRepository<Movie> movieRepo = new DALFacade().MovieRepository;
-        private IRepository<Genre> genreRepo = new DALFacade().GenreRepository;
+        //private IRepository<Movie> movieRepo = new DALFacade().MovieRepository;
+        //private IRepository<Genre> genreRepo = new DALFacade().GenreRepository;
+        MovieServiceGateway msg = new MovieServiceGateway();
+        GenreServiceGateway gsg = new GenreServiceGateway();
 
         // GET: Movies
-        public ActionResult Index(string GenreList, string PriceList)
+        public ActionResult Index(string GenreList)
         {
-            var movies = movieRepo.GetAll();
-            ViewBag.GenreList = new SelectList(genreRepo.GetAll().OrderBy(g => g.Name).Select(g => g.Name));
-            ViewBag.PriceList = new SelectList(movieRepo.GetAll().OrderBy(g => g.Price).Select(g => g.Price));
+            var movies = msg.GetAll();
+            ViewBag.GenreList = new SelectList(gsg.GetAll().OrderBy(g => g.Name).Select(g => g.Name));
 
             if (string.IsNullOrEmpty(GenreList))
                 return View(movies);
@@ -31,7 +33,7 @@ namespace MovieShopAdminv2.Controllers
         // GET: Movies/Details/5
         public ActionResult Details(int id)
         {
-            Movie movie = movieRepo.Get(id);
+            Movie movie = msg.Get(id);
             if (movie == null)
             {
                 return HttpNotFound();
@@ -43,7 +45,7 @@ namespace MovieShopAdminv2.Controllers
         // GET: Movies/Create
         public ActionResult Create()
         {
-            ViewBag.GenreId = new SelectList(genreRepo.GetAll(), "GenreId", "Name");
+            ViewBag.GenreId = new SelectList(gsg.GetAll(), "GenreId", "Name");
             return View();
         }
 
@@ -52,15 +54,15 @@ namespace MovieShopAdminv2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MovieId,GenreId,Title,Year,Price,ImageUrl,TrailerUrl")] Movie movie, string Command)
+        public ActionResult Create([Bind(Include = "MovieId,GenreId,Title,Year,Price,ImageUrl,TrailerUrl")] Movie movie)
         {
                 if (ModelState.IsValid)
                 {
-                    movieRepo.Add(movie);
+                    msg.Create(movie);
                     return RedirectToAction("Index");
                 }
 
-            ViewBag.GenreId = new SelectList(genreRepo.GetAll(), "GenreId", "Name", movie.Genre.GenreId);
+            ViewBag.GenreId = new SelectList(gsg.GetAll(), "GenreId", "Name", movie.Genre.GenreId);
             return View(movie);
         }
 
@@ -68,12 +70,12 @@ namespace MovieShopAdminv2.Controllers
         public ActionResult Edit(int id)
         {
 
-            Movie movie = movieRepo.Get(id);
+            Movie movie = msg.Get(id);
             if (movie == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.GenreId = new SelectList(genreRepo.GetAll(), "GenreId", "Name", movie.Genre.GenreId);
+            ViewBag.GenreId = new SelectList(gsg.GetAll(), "GenreId", "Name", movie.Genre.GenreId);
             return View(movie);
         }
 
@@ -86,17 +88,17 @@ namespace MovieShopAdminv2.Controllers
         {
             if (ModelState.IsValid)
             {
-                movieRepo.Edit(movie);
+                msg.Update(movie);
                 return RedirectToAction("Index");
             }
-            ViewBag.GenreId = new SelectList(genreRepo.GetAll(), "GenreId", "Name", movie.Genre.GenreId);
+            ViewBag.GenreId = new SelectList(gsg.GetAll(), "GenreId", "Name", movie.Genre.GenreId);
             return View(movie);
         }
 
         // GET: Movies/Delete/5
         public ActionResult Delete(int id)
         {
-            Movie movie = movieRepo.Get(id);
+            Movie movie = msg.Get(id);
             if (movie == null)
             {
                 return HttpNotFound();
@@ -109,7 +111,7 @@ namespace MovieShopAdminv2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            movieRepo.Remove(id);
+            msg.Delete(id);
             return RedirectToAction("Index");
         }
 

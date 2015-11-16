@@ -2,24 +2,26 @@
 using MovieShopDAL.BE;
 using MovieShopDAL.Repositories;
 using System.Web.Mvc;
+using MovieShopAdminv2.Infrastructure;
 
 namespace MovieShopAdminv2.Controllers
 {
     public class GenresController : Controller
     {
-        private IRepository<Genre> genreRepo = new DALFacade().GenreRepository;
+        //private IRepository<Genre> genreRepo = new DALFacade().GenreRepository;
+        GenreServiceGateway gsg = new GenreServiceGateway();
 
         // GET: Genres
         public ActionResult Index()
         {
-            var genres = genreRepo.GetAll();
+            var genres = gsg.GetAll();
             return View(genres);
         }
 
         // GET: Genres/Details/5
         public ActionResult Details(int id)
         {
-            var genres = genreRepo.Get(id);
+            var genres = gsg.Get(id);
             if (genres == null)
             {
                 return HttpNotFound();
@@ -42,7 +44,7 @@ namespace MovieShopAdminv2.Controllers
         {
             if (ModelState.IsValid)
             {
-                genreRepo.Add(genre);
+                gsg.Create(genre);
                 return RedirectToAction("Index");
             }
 
@@ -52,7 +54,7 @@ namespace MovieShopAdminv2.Controllers
         // GET: Genres/Edit/5
         public ActionResult Edit(int id)
         {
-            var genres = genreRepo.Get(id);
+            var genres = gsg.Get(id);
             if (genres == null)
             {
                 return HttpNotFound();
@@ -69,7 +71,7 @@ namespace MovieShopAdminv2.Controllers
         {
             if (ModelState.IsValid)
             {
-                genreRepo.Edit(genre);
+                gsg.Update(genre);
                 return RedirectToAction("Index");
             }
             return View(genre);
@@ -78,7 +80,7 @@ namespace MovieShopAdminv2.Controllers
         // GET: Genres/Delete/5
         public ActionResult Delete(int id)
         {
-            Genre genres = genreRepo.Get(id);
+            Genre genres = gsg.Get(id);
             if (genres == null)
             {
                 return HttpNotFound();
@@ -91,7 +93,7 @@ namespace MovieShopAdminv2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            genreRepo.Remove(id);
+            gsg.Delete(id);
             return RedirectToAction("Index");
         }
     }

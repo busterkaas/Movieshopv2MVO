@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using MovieShopAdminv2.Infrastructure;
 using MovieShopDAL.BE;
 using MovieShopDAL;
 using MovieShopDAL.Repositories;
@@ -10,21 +11,25 @@ namespace MovieShopAdminv2.Controllers
 {
     public class OrdersController : Controller
     {
-        private IRepository<Order> orderRepo = new DALFacade().OrderRepository;
-        private IRepository<Movie> movieRepo = new DALFacade().MovieRepository;
-        private IRepository<Customer> customerRepo = new DALFacade().CustomerRepository;
+        //private IRepository<Order> orderRepo = new DALFacade().OrderRepository;
+        //private IRepository<Movie> movieRepo = new DALFacade().MovieRepository;
+        //private IRepository<Customer> customerRepo = new DALFacade().CustomerRepository;
+
+        CustomerServiceGateway csg = new CustomerServiceGateway();
+        OrderServiceGateway osg = new OrderServiceGateway();
+        MovieServiceGateway msg = new MovieServiceGateway();
 
         // GET: Orders
         public ActionResult Index()
         {
-            var orders = orderRepo.GetAll().ToList();
+            var orders = osg.GetAll().ToList();
             return View(orders);
         }
 
         // GET: Orders/Details/5
         public ActionResult Details(int id)
         {
-            Order order = orderRepo.Get(id);
+            Order order = osg.Get(id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -35,8 +40,8 @@ namespace MovieShopAdminv2.Controllers
         // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.CustomerId = new SelectList(customerRepo.GetAll(), "CustomerId", "FirstName");
-            ViewBag.MovieId = new SelectList(movieRepo.GetAll(), "MovieId", "Title");
+            ViewBag.CustomerId = new SelectList(csg.GetAll(), "CustomerId", "FirstName");
+            ViewBag.MovieId = new SelectList(msg.GetAll(), "MovieId", "Title");
             return View();
         }
 
@@ -49,11 +54,11 @@ namespace MovieShopAdminv2.Controllers
         {
             if (ModelState.IsValid)
             {
-                orderRepo.Add(order);
+                osg.Create(order);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CustomerId = new SelectList(customerRepo.GetAll(), "CustomerId", "FirstName", order.Customer.CustomerId);
+            ViewBag.CustomerId = new SelectList(csg.GetAll(), "CustomerId", "FirstName", order.Customer.CustomerId);
             //ViewBag.MovieId = new SelectList(movieRepo.GetAll(), "MovieId", "Title", order.Movie.MovieId);
             return View(order);
         }
@@ -61,12 +66,12 @@ namespace MovieShopAdminv2.Controllers
         // GET: Orders/Edit/5
         public ActionResult Edit(int id)
         {
-            Order order = orderRepo.Get(id);
+            Order order = osg.Get(id);
             if (order == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CustomerId = new SelectList(customerRepo.GetAll(), "CustomerId", "FirstName", order.Customer.CustomerId);
+            ViewBag.CustomerId = new SelectList(csg.GetAll(), "CustomerId", "FirstName", order.Customer.CustomerId);
             //ViewBag.MovieId = new SelectList(movieRepo.GetAll(), "MovieId", "Title", order.Movie.MovieId);
             return View(order);
         }
@@ -80,10 +85,10 @@ namespace MovieShopAdminv2.Controllers
         {
             if (ModelState.IsValid)
             {
-                orderRepo.Edit(order);
+                osg.Update(order);
                 return RedirectToAction("Index");
             }
-            ViewBag.CustomerId = new SelectList(customerRepo.GetAll(), "CustomerId", "FirstName", order.Customer.CustomerId);
+            ViewBag.CustomerId = new SelectList(csg.GetAll(), "CustomerId", "FirstName", order.Customer.CustomerId);
             //ViewBag.MovieId = new SelectList(movieRepo.GetAll(), "MovieId", "Title", order.Movie.MovieId);
             return View(order);
         }
@@ -91,7 +96,7 @@ namespace MovieShopAdminv2.Controllers
         // GET: Orders/Delete/5
         public ActionResult Delete(int id)
         {
-            Order order = orderRepo.Get(id);
+            Order order = osg.Get(id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -104,7 +109,7 @@ namespace MovieShopAdminv2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            orderRepo.Remove(id);
+            osg.Delete(id);
             return RedirectToAction("Index");
         }
 

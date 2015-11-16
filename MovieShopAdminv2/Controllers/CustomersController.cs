@@ -4,24 +4,26 @@ using MovieShopDAL.Repositories;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using MovieShopAdminv2.Infrastructure;
 
 namespace MovieShop.Controllers
 {
     public class CustomersController : Controller
     {
-        private IRepository<Customer> custRepo = new DALFacade().CustomerRepository;
+        //private IRepository<Customer> custRepo = new DALFacade().CustomerRepository;
+        CustomerServiceGateway csg = new CustomerServiceGateway();
 
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = custRepo.GetAll();
+            var customers = csg.GetAll();
             return View(customers);
         }
 
         // GET: Customers/Details/5
         public ActionResult Details(int id)
         {
-            var customers = custRepo.Get(id);
+            var customers = csg.Get(id);
             if (customers == null)
             {
                 return HttpNotFound();
@@ -50,7 +52,7 @@ namespace MovieShop.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    custRepo.Add(customer);
+                    csg.Create(customer);
                     return RedirectToAction("Index");
                 }
                 return View(customer);
@@ -61,7 +63,7 @@ namespace MovieShop.Controllers
         // GET: Customers/Edit/5
         public ActionResult Edit(int id)
         {
-            var customers = custRepo.Get(id);
+            var customers = csg.Get(id);
             if (customers == null)
             {
                 return HttpNotFound();
@@ -78,7 +80,7 @@ namespace MovieShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                custRepo.Edit(customer);
+                csg.Update(customer);
                 return RedirectToAction("Index");
             }
             return View(customer);
@@ -87,7 +89,7 @@ namespace MovieShop.Controllers
         // GET: Customers/Delete/5
         public ActionResult Delete(int id)
         {
-            Customer customers = custRepo.Get(id);
+            Customer customers = csg.Get(id);
             if (customers == null)
             {
                 return HttpNotFound();
@@ -100,13 +102,13 @@ namespace MovieShop.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            custRepo.Remove(id);
+            csg.Delete(id);
             return RedirectToAction("Index");
         }
 
         private bool Validate(Customer cus)
         {
-            List<Customer> customers = custRepo.GetAll().ToList();
+            List<Customer> customers = csg.GetAll().ToList();
             Customer customer = customers.Find(c => c.Email == cus.Email);
             if (customer != null) { return false; } else { return true; }
         }
