@@ -14,7 +14,7 @@ namespace MovieShopAdminv2.Infrastructure
         public HttpResponseMessage Create(Movie t)
         {
             HttpClient client = sg.GetHttpClient();
-            HttpResponseMessage response = client.PostAsJsonAsync("api/movie", t).Result;
+            HttpResponseMessage response = client.PostAsJsonAsync("api/movie/", t).Result;
             return response;
         }
 
@@ -44,7 +44,7 @@ namespace MovieShopAdminv2.Infrastructure
         public HttpResponseMessage Update(Movie t)
         {
             HttpClient client = sg.GetHttpClient();
-            HttpResponseMessage response = client.PutAsJsonAsync("api/movie/" + t.MovieId, t).Result;
+            HttpResponseMessage response = client.PutAsJsonAsync("api/movie/" + t.MovieId.ToString(), t).Result;
             return response;
         }
     }

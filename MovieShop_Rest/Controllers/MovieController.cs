@@ -46,26 +46,23 @@ namespace MovieShop_Rest.Controllers
             return Ok(movieDto);
         }
 
-        //---------------------Mangler------------------------------------------------------------
-        //// POST/ api/movies
-        ///// <summary>
-        ///// Creates a new movie and adds it to the list of products
-        ///// </summary>
-        ///// <param name="movie">Product</param>
-        ///// <returns>Http response message containing the Movie, its URI, and a HTTP status code</returns>
-        //[ResponseType(typeof(Movie))]
-        //public IHttpActionResult PostMovie(Movie movie)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
+        // POST/ api/movies
+        /// <summary>
+        /// Creates a new movie and adds it to the list of products
+        /// </summary>
+        /// <param name="movie">Product</param>
+        /// <returns>Http response message containing the Movie, its URI, and a HTTP status code</returns>
+        [ResponseType(typeof(Movie))]
+        public IHttpActionResult PostMovie(MovieDto movie)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            df.MovieRepository.Add(new MovieDtoConverter().Reverse(movie));
 
-        //    df.MovieRepository.Add(movie);
-
-        //    return Ok(movie);
-        //}
-        //---------------------Mangler------------------------------------------------------------------
+            return CreatedAtRoute("DefaultApi", new { id = movie.MovieId }, movie);
+        }
 
         // PUT /api/Movies/id
         /// <summary>
@@ -79,11 +76,6 @@ namespace MovieShop_Rest.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
-
-            if (id != movie.GenreId)
-            {
-                return BadRequest();
             }
             try
             {

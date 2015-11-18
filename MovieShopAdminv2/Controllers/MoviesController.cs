@@ -1,5 +1,7 @@
 ﻿using System.Data;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Mvc;
 using MovieShopAdminv2.Infrastructure;
 using MovieShopDAL;
@@ -54,12 +56,16 @@ namespace MovieShopAdminv2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MovieId,GenreId,Title,Year,Price,ImageUrl,TrailerUrl")] Movie movie)
+        public ActionResult Create([Bind(Include = "GenreId,Title,Year,Price,ImageUrl,TrailerUrl")] Movie movie)
         {
                 if (ModelState.IsValid)
                 {
-                    msg.Create(movie);
-                    return RedirectToAction("Index");
+                //msg.Create(movie);
+                HttpResponseMessage response = msg.Create(movie);
+                    if (response.StatusCode == HttpStatusCode.Created)
+                        return RedirectToAction("Index");
+                    else
+                        return new HttpStatusCodeResult(response.StatusCode);
                 }
 
             ViewBag.GenreId = new SelectList(gsg.GetAll(), "GenreId", "Name", movie.Genre.GenreId);

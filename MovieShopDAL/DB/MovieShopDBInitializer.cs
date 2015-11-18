@@ -5,7 +5,7 @@ using System.Data.Entity;
 
 namespace MovieShopDAL
 {
-    public class MovieShopDBInitializer : DropCreateDatabaseIfModelChanges<MovieShopDBContext>
+    public class MovieShopDBInitializer : DropCreateDatabaseAlways<MovieShopDBContext>
     {
         //Opret genre 
 
